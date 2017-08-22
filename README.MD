@@ -1,7 +1,14 @@
 # vue-editor
 
+Editor for Vue2.0 , Base on wangEditor v2.x
 
-Editor for Vue2.0 , Base on wangEditor
+#### notice
+
+    I don't suggest you use wangeditor v3.0 in your production now
+    because it's not very stable, such as the user interface, the upload image and so on.
+    choose wangeditor v2.0 first, if you do not want to trouble 
+
+
 
 #### how to use
 
@@ -9,9 +16,9 @@ Editor for Vue2.0 , Base on wangEditor
 template
 
     <v-editor
-    :input-content="inputContent"
-    :upload-url="uploadURL"
-    v-model="outputContent"></v-editor>
+    :content="content"
+    :path="path"
+    v-model="result"></v-editor>
 
 
 import
@@ -21,19 +28,16 @@ import
         data() {
             return {
                 // input content to editor
-                inputContent: 'base on wangeditor',
+                content: 'base on wangeditor',
                 // output content from editor
-                outputContent: '',
+                result: '',
                 // set image upload api url
-                uploadURL: '/api/v1/help/upload/wangEditorH5File'
+                path: '/api/v1/help/upload/wangEditorH5File'
             }
         },
-        computed: {},
-        ready() {},
-        attached() {},
         methods: {
             submit() {
-                console.log(this.outputContent)
+                console.log(this.result)
             }
         },
         components: {
